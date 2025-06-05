@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    function greet() {
+        alert(txtName1.value+txtName2.value);
+    }
+    function calc(){
+        let a = number(txtName1.value);
+        let b = number(txtName2.value);
+        alert(a+b);
+    }
+</script>
+</head>
+<body>
+    <input type="text1" id="txtName1" />
+    <input type="text2" id="txtName2">
+    <button onclick="greet()" style="background-color: blue;"> click </button>
+    <button onclick="calc()" style="background-color: brown;"> addition </button>
+</body>
+</html>
