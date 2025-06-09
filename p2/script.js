@@ -1,6 +1,6 @@
 const users = [];
 let user={}
-const showLogin = () => {
+const showlogin = () => {
     let str=`
     <div class='App-Container'>
     <h1>Login Form</h1>
@@ -19,16 +19,15 @@ const showRegister = () => {
      <p><input type="text" id="txtEmail"></p>
     <p><input type="password" id="txtPass"></p>
     <button onclick='adduser()'>Register</button>
-    <button onclick='showlogin()'>Register<button</button>
     `
     root.innerHTML = str
 }
 
 const adduser= () => {
     const user= {
-    name: getElementByID("txtName").value
-    email: getElementByID("txtEmail").value
-    pass: getElementByID("txtPass").value
+    name: getElementById("txtName").value,
+    email: getElementById("txtEmail").value,
+    pass: getElementById("txtPass").value,
     };
     users.push(user);
     console.log(users);

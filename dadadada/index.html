@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Email Search</title>
+</head>
+<body>
+  <input type="text" id="txtemail" placeholder="Enter email"/>
+  <button onclick="fetchName()">Search</button>
+  <div id="dvUsers"></div>
+
+  <script>
+    const url = "https://jsonplaceholder.typicode.com/users";
+    let usersData = [];
+    fetch(url)
+      .then((res) => res.json()) 
+      .then((users) => {   
+        usersData = users;  
+      });
+
+    function fetchName() {
+      const email = document.getElementById("txtemail").value; 
+      const resultDiv = document.getElementById("dvUsers");
+      const foundUser = usersData.find((user) => user.email.toLowerCase() === email.toLowerCase());
+
+      if (foundUser) {
+        resultDiv.innerHTML = `<p>Name: ${foundUser.name}</p>`;
+      } else {
+        resultDiv.innerHTML = `<p style="color:red;">Email not found</p>`;
+      }
+    }
+  </script>
+</body>
+</html>
+
+//social media site 
